@@ -108,6 +108,8 @@ clock-color=1;0;0;0
 nvbuf-memory-type=0
 
 [streammux]
+sync-inputs=1
+batched-push-timeout=40000 # for 25 fps
 gpu-id=0
 ##Boolean property to inform muxer that sources are live
 live-source=0
