@@ -1,0 +1,24 @@
+############################################################################
+#  YOLO detector – person-only, FP16, 640×640
+############################################################################
+[property]
+gpu-id=0
+network-type=0                       # 0 = detector
+model-engine-file=/root/videos/yolo_person_fp16.engine
+onnx-file=/root/videos/yolov5n.onnx
+num-detected-classes=1
+labelfile-path=labels_person.txt      # single-line file:  person
+batch-size=1
+network-mode=1                        # 0=FP32  1=FP16
+pre-cluster-threshold=0.25
+topk=100
+stride=32
+maintain-aspect-ratio=1
+cluster-mode=1                        # NMS
+
+[custom]
+custom-lib-path=/opt/nvidia/deepstream/deepstream-7.1/lib/libnvdsinfer_custom_impl_Yolo.so
+parse-bbox-func-name=NvDsInferParseYolo
+
+[threshold]
+class0=0.25

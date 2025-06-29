@@ -133,8 +133,8 @@ batch-size=4
 ##to push the batch even if the complete batch is not formed
 batched-push-timeout=40000
 ## Set muxer output width and height
-width=1920
-height=1080
+width=640
+height=640
 ##Enable to maintain aspect ratio wrt source, and allow black borders, works
 ##along with width, height properties
 enable-padding=0
@@ -159,7 +159,7 @@ bbox-border-color3=0;1;0;1
 interval=0
 gie-unique-id=1
 nvbuf-memory-type=0
-config-file=config_infer_primary.txt
+config-file=/root/videos/config_infer_primary_yolo.txt
 
 [tracker]
 enable=1
@@ -177,7 +177,7 @@ gpu-id=0
 display-tracking-id=1
 
 [secondary-gie0]
-enable=1
+enable=0
 model-engine-file=../../models/Secondary_VehicleTypes/resnet18_vehicletypenet_pruned.onnx_b16_gpu0_int8.engine
 gpu-id=0
 batch-size=16
@@ -187,7 +187,7 @@ operate-on-class-ids=0;
 config-file=config_infer_secondary_vehicletypes.txt
 
 [secondary-gie1]
-enable=1
+enable=0
 model-engine-file=../../models/Secondary_VehicleMake/resnet18_vehiclemakenet_pruned.onnx_b16_gpu0_int8.engine
 batch-size=16
 gpu-id=0
