@@ -66,7 +66,7 @@ gpu-id=0
 nvbuf-memory-type=0
 
 [sink1]
-enable=0
+enable=1
 #Type - 1=FakeSink 2=EglSink 3=File 4=RTSPStreaming
 type=3
 #1=mp4 2=mkv
@@ -75,14 +75,14 @@ container=1
 codec=1
 #encoder type 0=Hardware 1=Software
 enc-type=0
-sync=0
+sync=1
 #iframeinterval=10
 bitrate=2000000
 #H264 Profile - 0=Baseline 2=Main 4=High
 #H265 Profile - 0=Main 1=Main10
 # set profile only for hw encoder, sw encoder selects profile based on sw-preset
 profile=0
-output-file=out.mp4
+output-file=/root/models/out.mp4
 source-id=0
 
 [sink2]
@@ -149,7 +149,7 @@ nvbuf-memory-type=0
 [primary-gie]
 enable=1
 gpu-id=0
-model-engine-file=/root/models/resnet18_trafficcamnet_pruned.onnx_b4_gpu0_int8.engine
+model-engine-file=/root/models/dino_fan_small_astro_delta.onnx_b4_gpu0_fp16.engine
 batch-size=4
 #Required by the app for OSD, not a plugin property
 bbox-border-color0=1;0;0;1
@@ -159,7 +159,7 @@ bbox-border-color3=0;1;0;1
 interval=0
 gie-unique-id=1
 nvbuf-memory-type=0
-config-file=config_infer_primary.txt
+config-file=pgie_ddetr_tao_config.txt
 
 [tracker]
 enable=1
