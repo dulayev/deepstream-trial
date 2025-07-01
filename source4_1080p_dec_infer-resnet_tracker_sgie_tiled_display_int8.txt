@@ -149,7 +149,7 @@ nvbuf-memory-type=0
 [primary-gie]
 enable=1
 gpu-id=0
-model-engine-file=../../models/Primary_Detector/resnet18_trafficcamnet_pruned.onnx_b4_gpu0_int8.engine
+model-engine-file=/root/models/resnet18_trafficcamnet_pruned.onnx_b4_gpu0_int8.engine
 batch-size=4
 #Required by the app for OSD, not a plugin property
 bbox-border-color0=1;0;0;1
@@ -177,7 +177,7 @@ gpu-id=0
 display-tracking-id=1
 
 [secondary-gie0]
-enable=1
+enable=0
 model-engine-file=../../models/Secondary_VehicleTypes/resnet18_vehicletypenet_pruned.onnx_b16_gpu0_int8.engine
 gpu-id=0
 batch-size=16
@@ -187,7 +187,7 @@ operate-on-class-ids=0;
 config-file=config_infer_secondary_vehicletypes.txt
 
 [secondary-gie1]
-enable=1
+enable=0
 model-engine-file=../../models/Secondary_VehicleMake/resnet18_vehiclemakenet_pruned.onnx_b16_gpu0_int8.engine
 batch-size=16
 gpu-id=0
